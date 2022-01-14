@@ -4,6 +4,7 @@ import App from "./App";
 // import reportWebVitals from "./reportWebVitals";
 import Providers from "contexts/Provider";
 import GlobalStyle from "styles/global";
+import "antd/dist/antd.css";
 
 ReactDOM.render(
   <Providers>

@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles/App.less";
 import LayoutAntD from "./components/LayoutAntD/LayoutAntD";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "context/ScrollToTop";
