@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   presale: {
     97: "0xaf02b1972A3C6A8C10119888D001f104Ff662F0B",
