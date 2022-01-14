@@ -54,7 +54,6 @@ function Presale() {
     setVal(e.target.value);
     if (Number(e.target.value) < 0.1 || !e.target.value || Number(e.target.value) > 1) {
       setBuyRound("0");
-    } else {
     }
   };
 
