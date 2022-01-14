@@ -10,6 +10,8 @@ import { LoadingOutlined } from "@ant-design/icons";
 import InputText from "components/InputText/InputText";
 import Button from "components/Button";
 import { fromWei } from "utils/unitConversion";
+import { registerToken } from "utils/wallet";
+import { getPresaleTokenAddress } from "utils/addressHelper";
 
 function Presale() {
   const [load, setLoad] = useState(true);
@@ -78,18 +80,24 @@ function Presale() {
     }
   };
 
+  const addToken = async () => {
+    await registerToken(getPresaleTokenAddress(), "NCP", 18);
+  };
+
   return (
     <GridColumn>
+      <H1TEXT>Your Address : {chainId ? account : <LoadingOutlined />}</H1TEXT>
       <H1TEXT>Your BNB Balance : {!load ? bnb : <LoadingOutlined />} BNB</H1TEXT>
-      <H1TEXT>Your Token Balance : {!load ? tokenBalance : <LoadingOutlined />} token</H1TEXT>
-      <H1TEXT>All Token : {!load ? allToken : <LoadingOutlined />} token</H1TEXT>
-      <H1TEXT>Remaining Token : {!load ? remain : <LoadingOutlined />} token</H1TEXT>
+      <H1TEXT>Your NCP Balance : {!load ? tokenBalance : <LoadingOutlined />} NCP</H1TEXT>
+      <H1TEXT>NCP For Sale : {!load ? allToken : <LoadingOutlined />} NCP</H1TEXT>
+      <H1TEXT>Remaining NCP Sale : {!load ? remain : <LoadingOutlined />} NCP</H1TEXT>
       <InputText type="number" value={val} onChange={handleChange} />
       <GridRow rowTem="1fr 1fr" gap="2rem">
         <Button onClick={willget} text="CALCURATE MIN" disabled={val === "0" || val === ""} />
         <Button onClick={buy} text="BUY" disabled={val === "0" || val === ""} />
+        <Button style={{ gridColumn: "1 / -1" }} onClick={addToken} text="Add Presale Token" disabled={!chainId} />
       </GridRow>
-      <H1TEXT>You will Recieve : {!load2 ? buyRound : <LoadingOutlined />} token</H1TEXT>
+      <H1TEXT>You will Recieve : {!load2 ? buyRound : <LoadingOutlined />} NCP</H1TEXT>
     </GridColumn>
   );
 }

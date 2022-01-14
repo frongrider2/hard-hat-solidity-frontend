@@ -5,7 +5,7 @@ import { getPresaleContract } from "utils/contractHelpers";
 import { Contract } from "@ethersproject/contracts";
 import { getContract } from "utils";
 import presaleABI from "config/abi/TestPresale.json";
-import { getPresaleAddress, getPresaleToenAddress } from "utils/addressHelper";
+import { getPresaleAddress, getPresaleTokenAddress } from "utils/addressHelper";
 import { ERC20_ABI } from "config/abi/erc20";
 
 // returns null on errors
@@ -28,7 +28,7 @@ export const usePresaleContract = (withSigner = true) => {
 };
 
 export const usePresaleTokenContract = (withSigner = true) => {
-  return useContract(getPresaleToenAddress(), ERC20_ABI, withSigner);
+  return useContract(getPresaleTokenAddress(), ERC20_ABI, withSigner);
 };
 
 export const usePresaleContract2 = () => {

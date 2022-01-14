@@ -59,6 +59,7 @@ const LayoutAntDWrapper = styled.div`
     .sider {
       position: fixed;
       height: 100vh;
+      z-index: 100;
     }
     .layout_content {
       padding-left: 50px;

@@ -15,6 +15,6 @@ export const getMulticallAddress = (): string => {
   return getAddress(addresses["multicall"]);
 };
 
-export const getPresaleToenAddress = (): string => {
+export const getPresaleTokenAddress = (): string => {
   return getAddress(addresses["presaleToken"]);
 };
