@@ -1,6 +1,6 @@
 import { Address } from "config/types";
 import addresses from "config/contracts";
-import { ChainId } from "config/sdk";
+import { ChainId } from "sdk";
 
 export const getAddress = (address: Address): string => {
   const chainId = process.env.REACT_APP_CHAIN_ID;

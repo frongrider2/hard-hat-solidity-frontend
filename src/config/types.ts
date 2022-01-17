@@ -1,5 +1,5 @@
 import BigNumber from "bignumber.js";
-import { Token } from "./sdk";
+import { Token } from "sdk";
 
 export type MultiCallResponse<T> = T | null;
 
