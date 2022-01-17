@@ -1,12 +1,15 @@
 import { mainnetTokens, serializedTokens } from "config/constants/tokens";
 import React from "react";
+import SwapItem from "./components/SwapItem";
+import { SwapWrapper } from "./styled";
 
 function Swap() {
   console.log(mainnetTokens);
   return (
-    <div>
-      <h1>Swap</h1>
-    </div>
+    <SwapWrapper>
+      <SwapItem />
+      <SwapItem />
+    </SwapWrapper>
   );
 }
 

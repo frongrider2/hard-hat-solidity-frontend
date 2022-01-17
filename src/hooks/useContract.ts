@@ -5,8 +5,9 @@ import { getPresaleContract } from "utils/contractHelpers";
 import { Contract } from "@ethersproject/contracts";
 import { getContract } from "utils";
 import presaleABI from "config/abi/TestPresale.json";
-import { getPresaleAddress, getPresaleTokenAddress } from "utils/addressHelper";
+import { getMulticallAddress, getPresaleAddress, getPresaleTokenAddress } from "utils/addressHelper";
 import { ERC20_ABI } from "config/abi/erc20";
+import multiCallAbi from "../config/abi/Multicall.json";
 
 // returns null on errors
 function useContract(address: string | undefined, ABI: any, withSignerIfPossible = true): Contract | null {
@@ -35,3 +36,7 @@ export const usePresaleContract2 = () => {
   const { library } = useActiveWeb3React();
   return useMemo(() => getPresaleContract(library), [library]);
 };
+
+export function useMulticallContract(): Contract | null {
+  return useContract(getMulticallAddress(), multiCallAbi, false);
+}
